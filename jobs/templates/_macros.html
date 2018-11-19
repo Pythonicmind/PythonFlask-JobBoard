@@ -32,7 +32,7 @@ Line break
 <div class="columns is-multiline">
     {% for job in Jobs %}
       <div class=" column is-half">
-        {% show_job(Job)%}
+        {{ show_job(Job) }}
       </div>
     {% endfor %}
 

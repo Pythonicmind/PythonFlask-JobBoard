@@ -1,0 +1,41 @@
+<!-- create a template macro, using the macro tag, called show_job. show_job should take one parameter called job. Don't forgot to end the macro. -->
+{% macro show_job(job) %}
+<!-- Locate the template.html file in the root of the project. Open it and find the code labeled  <!-- show_job -->. Copy the code to the body of the show_job macro in _macros.html. -->
+
+<div class="card adjust-height">
+  <header class="card-header">
+<!--Still in the body of the show_job macro in _macros.html, find the <p> tag with a class of card_header_title. Add an <a> tag with the contents should be {{ job['title'] }}. -->
+    <p class="card-header-title">
+    <a href="">{{ job['title'] }}</a>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <!-- Show Job Macro Body
+Next find the <div> with a class of content in the show_job macro and add a <p> tag. In the <p> tag add the following:
+<a> tag with the contents {{ job['employer_name'] }}.
+Line break
+${{ job['salary'] }}
+Line break
+{{ job['description'] }} -->
+      <p>
+        <a href="">{{ job['employer_name'] }}</a><br>
+        ${{ job['salary'] }} <br>
+        {{ job['description'] }}
+      </p>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+<!--> In _macros.html create a template macro using the macro tag call it show_jobs. show_jobs should take one parameter called jobs. Don't forgot to end the macro.-->
+{% macro show_jobs(jobs) %}
+<div class="columns is-multiline">
+    {% for job in Jobs %}
+      <div class=" column is-half">
+        {% show_job(Job)%}
+      </div>
+    {% endfor %}
+
+</div>
+
+{% endmacro %}

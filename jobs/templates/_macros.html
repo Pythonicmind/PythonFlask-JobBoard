@@ -6,7 +6,7 @@
   <header class="card-header">
 <!--Still in the body of the show_job macro in _macros.html, find the <p> tag with a class of card_header_title. Add an <a> tag with the contents should be {{ job['title'] }}. -->
     <p class="card-header-title">
-    <a href="">{{ job['title'] }}</a>
+    <a href="{{ url_for('job', job_id=job['id']) }}">{{ job['title'] }}</a>
     </p>
   </header>
   <div class="card-content">
